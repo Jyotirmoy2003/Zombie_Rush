@@ -20,5 +20,6 @@ public class SaveScript : MonoBehaviour
     ItemPickedUp[0]=true;
     ItemPickedUp[1]=true;
     ItemPickedUp[2]=true;
+    ItemPickedUp[3]=true;
    }
 }

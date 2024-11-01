@@ -77,6 +77,9 @@ public class WeaponManager : MonoBehaviour
             case weaponSelect.Bottle:
                 armGameObject.localPosition=new Vector3(0.02f,-0.193f,0.66f);
                 break;
+            case weaponSelect.Bottle_with_Cloth:
+                Lighter.SetActive(true);
+                break;
         }
     }
 
@@ -96,6 +99,8 @@ public class WeaponManager : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             animator.SetTrigger("Attack");
+            
+            if(!weaponAudios[SaveScript.weaponID]) return; //if no audio is assigned just skip
             audioSource.clip=weaponAudios[SaveScript.weaponID];
             audioSource.Play();
         }

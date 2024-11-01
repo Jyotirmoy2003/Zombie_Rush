@@ -22,6 +22,7 @@ public enum weaponSelect{
     ShotGun,
     SprayCan,
     Bottle,
+    Bottle_with_Cloth
 }
 public delegate void NoArgumentFun();
 }

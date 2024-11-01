@@ -137,6 +137,22 @@ public class InventoryManager : MonoBehaviour
         combinePanel.SetActive(false);
         
     }
+    public void CombineAssignWeapon()
+    {
+       
+        if(currentSelectedWeapon==6)
+        {
+            AssignWeapon();
+        }else if(currentSelectedWeapon==7)
+        {
+            SaveScript.weaponID=currentSelectedWeapon+=1;
+            AssignWeapon();
+           
+        }
+
+        AudioManager.instance.PlaySound("Select");
+       
+    }
 
     //when use button pressed from weapon menu
     public void AssignWeapon()

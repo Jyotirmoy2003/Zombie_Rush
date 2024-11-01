@@ -3,10 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using Jy_Mono_Util;
-using UnityEngine.TextCore;
-using Game_Input;
-using UnityEngine.Rendering.PostProcessing;
-using UnityStandardAssets.Utility;
+
 
 public class NightVision : BatterySystem
 {
