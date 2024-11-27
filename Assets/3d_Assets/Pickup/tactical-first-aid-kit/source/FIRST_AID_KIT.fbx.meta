@@ -3,7 +3,12 @@ guid: 8324ea50f556ec4408902b87ad4f4650
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AIDKIT_OLIVE
+    second: {fileID: 2100000, guid: 700f8e3b755b1c5439e9d6588b44d235, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
