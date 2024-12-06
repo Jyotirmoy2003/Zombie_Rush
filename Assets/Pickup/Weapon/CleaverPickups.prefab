@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2279935600717591044}
   - component: {fileID: 7763269154506278018}
   - component: {fileID: 189072851353223235}
+  - component: {fileID: 5812005237911011609}
   m_Layer: 7
   m_Name: CleaverPickups
   m_TagString: weapon
@@ -105,3 +106,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &5812005237911011609
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102739550406295151}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8574926, y: 0.5420171, z: 0.10500637}
+  m_Center: {x: -0.40643722, y: 0.60449785, z: -0.000000026471483}

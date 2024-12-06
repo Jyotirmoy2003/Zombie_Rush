@@ -324,6 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 132870881328148389}
+  - component: {fileID: 3295789724387180078}
   m_Layer: 7
   m_Name: shotgunPickup
   m_TagString: weapon
@@ -351,6 +352,27 @@ Transform:
   - {fileID: 5256636557989215942}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &3295789724387180078
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6088413703098993387}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.060930856, y: 0.1363309, z: 1.0228491}
+  m_Center: {x: -0.0011425549, y: 0.0045694867, z: 0.4112714}
 --- !u!1 &8464383118400576142
 GameObject:
   m_ObjectHideFlags: 0

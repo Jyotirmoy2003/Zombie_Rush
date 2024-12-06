@@ -325,6 +325,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5203958320437977740}
+  - component: {fileID: 3202573147412757559}
+  - component: {fileID: 5904895964208176792}
   m_Layer: 7
   m_Name: pistolPickup
   m_TagString: weapon
@@ -351,6 +353,48 @@ Transform:
   - {fileID: 3138923142846959413}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &3202573147412757559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754937678020303874}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.046959206, y: 0.08637956, z: 0.48753822}
+  m_Center: {x: -0.0034785124, y: 0.06492708, z: 0.18202892}
+--- !u!65 &5904895964208176792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754937678020303874}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.04464067, y: 0.2069591, z: 0.14435065}
+  m_Center: {x: 0.00000047448435, y: 0.0023185736, z: -0.0011598751}
 --- !u!1 &4021576209959970208
 GameObject:
   m_ObjectHideFlags: 0
