@@ -5,7 +5,7 @@ using Jy_Mono_Util;
 
 public class WeaponManager : MonoBehaviour
 {
-    [SerializeField] weaponSelect chosenWeapon;
+    [SerializeField] E_weaponSelect chosenWeapon;
     [SerializeField] GameObject[] weapons;
     [SerializeField] GameObject Lighter;
     [SerializeField] Animator animator;
@@ -37,7 +37,7 @@ public class WeaponManager : MonoBehaviour
         animator.SetBool("WeaponChange",true);
         animator.SetInteger("WeaponID",SaveScript.weaponID);
         Invoke(nameof(ResetAnimationBool),0.3f);
-        chosenWeapon=(weaponSelect)SaveScript.weaponID;
+        chosenWeapon=(E_weaponSelect)SaveScript.weaponID;
 
         MoveFPSArm();
     }
@@ -52,32 +52,32 @@ public class WeaponManager : MonoBehaviour
         Lighter.SetActive(false);
         switch(chosenWeapon)
         {
-            case weaponSelect.Knife:
+            case E_weaponSelect.Knife:
                 armGameObject.localPosition=new Vector3(0.02f,-0.193f,0.66f);
                 break;
-            case weaponSelect.Cleaver:
+            case E_weaponSelect.Cleaver:
                 armGameObject.localPosition=new Vector3(0.02f,-0.193f,0.66f);
                 break;
-            case weaponSelect.Bat:
+            case E_weaponSelect.Bat:
                 armGameObject.localPosition=new Vector3(0.02f,-0.193f,0.66f);
                 break;
-            case weaponSelect.Axe:
+            case E_weaponSelect.Axe:
                 armGameObject.localPosition=new Vector3(0.02f,-0.193f,0.66f);
                 break;
-            case weaponSelect.Pistol:
+            case E_weaponSelect.Pistol:
                 armGameObject.localPosition=new Vector3(0.02f,-0.193f,0.66f);
                 break;
-            case weaponSelect.ShotGun:
+            case E_weaponSelect.ShotGun:
                 armGameObject.localPosition=new Vector3(0.02f,-0.193f,0.46f);
                 break;
-            case weaponSelect.SprayCan:
+            case E_weaponSelect.SprayCan:
                 armGameObject.localPosition=new Vector3(0.02f,-0.193f,0.66f);
                 Lighter.SetActive(true);
                 break;
-            case weaponSelect.Bottle:
+            case E_weaponSelect.Bottle:
                 armGameObject.localPosition=new Vector3(0.02f,-0.193f,0.66f);
                 break;
-            case weaponSelect.Bottle_with_Cloth:
+            case E_weaponSelect.Bottle_with_Cloth:
                 Lighter.SetActive(true);
                 break;
         }

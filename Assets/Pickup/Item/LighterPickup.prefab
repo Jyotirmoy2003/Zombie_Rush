@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 210596269063071090}
   - component: {fileID: 6300217539479500582}
   - component: {fileID: 3180271660280090851}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LighterPickup
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

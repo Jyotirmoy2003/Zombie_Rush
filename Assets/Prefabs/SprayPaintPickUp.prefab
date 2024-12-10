@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8433826855584726196}
+  - component: {fileID: 5229548279001643972}
   m_Layer: 0
   m_Name: SprayPaintPickUp
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   - {fileID: 674836757002944183}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5229548279001643972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4392096658114343851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dcb72fb534e07a46814a2d22400b29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chooseWeapon: 6
 --- !u!1 &7129803884992862597
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +57,8 @@ GameObject:
   - component: {fileID: 674836757002944183}
   - component: {fileID: 954282923240096848}
   - component: {fileID: 6578067847489019074}
+  - component: {fileID: 8809928713905278296}
+  - component: {fileID: 6955191948908868915}
   m_Layer: 0
   m_Name: Can
   m_TagString: Untagged
@@ -93,7 +109,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b216b731c6a6d4e458842b5127875fb0, type: 2}
+  - {fileID: 2100000, guid: 9a9ac12a8080112469c175b94c6f6583, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,3 +131,47 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &8809928713905278296
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129803884992862597}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1071b6bc90a70546ac6af4b5dad00d3, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &6955191948908868915
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129803884992862597}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.06253861
+  m_Height: 0.33878124
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0.0000076293945}

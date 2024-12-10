@@ -13,7 +13,7 @@ public class Jy_Utility : MonoBehaviour
 }
 
 
-public enum weaponSelect{
+public enum E_weaponSelect{
     Knife,
     Cleaver,
     Bat,
@@ -24,6 +24,17 @@ public enum weaponSelect{
     Bottle,
     Bottle_with_Cloth
 }
+
+public enum E_TypeOf_Weapon{
+    Knife,
+    Cleaver,
+    Bat,
+    Axe,
+    Pistol,
+    ShotGun,
+    SprayCan,
+    Bottle
+}
 public delegate void NoArgumentFun();
 }
 
@@ -33,5 +44,13 @@ public struct InventoryItem
     public Button button;
     public Sprite sprite;
     public string Title;
+    public string description;
+}
+
+[System.Serializable]
+public struct S_WepomInfo
+{
+    public Sprite sprite;
+    public string title;
     public string description;
 }
