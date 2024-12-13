@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chooseWeapon: 7
+  gazeEvent: {fileID: 11400000, guid: c8cf46fa762615a4296d4976b4f2fc36, type: 2}
 --- !u!114 &5560090319173240119
 MonoBehaviour:
   m_ObjectHideFlags: 0

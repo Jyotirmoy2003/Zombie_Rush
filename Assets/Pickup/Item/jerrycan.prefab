@@ -90,6 +90,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b9be35325b35d4d418862ed8c5cb5aba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 446519470252818462}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b9be35325b35d4d418862ed8c5cb5aba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5280059930680029392}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b9be35325b35d4d418862ed8c5cb5aba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -802686028640115886}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b9be35325b35d4d418862ed8c5cb5aba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1498243586306688579}
   m_SourcePrefab: {fileID: 100100000, guid: b9be35325b35d4d418862ed8c5cb5aba, type: 3}
 --- !u!1 &8449266063339846276 stripped
 GameObject:
@@ -138,3 +147,58 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.17945006, y: 0.42510706, z: 0.3084811}
   m_Center: {x: 0, y: 0.18603694, z: 0.0052846}
+--- !u!114 &-5280059930680029392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449266063339846276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &-802686028640115886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449266063339846276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfc4d53d81096948b34ce07860f324e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camRef: {fileID: 0}
+  targetTramform: {fileID: 9082073915489132606}
+  isSequencialFlow: 1
+  startIndex: 0
+  feedbackList:
+  - {fileID: 11400000, guid: a543286ac94eb4e468026731758679ee, type: 2}
+--- !u!114 &-1498243586306688579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449266063339846276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4bfaac2f741df4bad89e5c07a4dcae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chooseItem: 12
+  gazeEvent: {fileID: 11400000, guid: c8cf46fa762615a4296d4976b4f2fc36, type: 2}
+--- !u!4 &9082073915489132606 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b9be35325b35d4d418862ed8c5cb5aba, type: 3}
+  m_PrefabInstance: {fileID: 8755203722540173269}
+  m_PrefabAsset: {fileID: 0}

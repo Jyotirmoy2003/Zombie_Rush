@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 7378061363033228174}
   - component: {fileID: 5460119773227345907}
   - component: {fileID: 4863149315016936957}
+  - component: {fileID: 7098197462425587550}
+  - component: {fileID: -6862443937532557109}
+  - component: {fileID: -3010012076427099739}
   m_Layer: 7
   m_Name: Pills
   m_TagString: item
@@ -127,3 +130,53 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.021490445, y: 0.021711437, z: 0.03495929}
   m_Center: {x: 0, y: 0, z: 0.0074796434}
+--- !u!114 &7098197462425587550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822079534618601543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &-6862443937532557109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822079534618601543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfc4d53d81096948b34ce07860f324e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camRef: {fileID: 0}
+  targetTramform: {fileID: 5824252733319341351}
+  isSequencialFlow: 1
+  startIndex: 0
+  feedbackList:
+  - {fileID: 11400000, guid: a543286ac94eb4e468026731758679ee, type: 2}
+--- !u!114 &-3010012076427099739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822079534618601543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4bfaac2f741df4bad89e5c07a4dcae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chooseItem: 5
+  gazeEvent: {fileID: 11400000, guid: c8cf46fa762615a4296d4976b4f2fc36, type: 2}

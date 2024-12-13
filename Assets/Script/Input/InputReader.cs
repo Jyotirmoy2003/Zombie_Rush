@@ -15,7 +15,7 @@ namespace Game_Input
 public class InputReader : ScriptableObject,IGameActions
 {
     public event Action<bool> OnJumpEvent,OnRunEvent;
-    public event Action OnFlashlightEvent,OnNightVisionEvent,OnInventoryEvent;
+    public event Action OnFlashlightEvent,OnNightVisionEvent,OnInventoryEvent,OnInteractEvent;
     public event Action<Vector2> OnMoveEvent; 
     public event Action<Double> OnZoomEvent;
     private GameInput inputActions;
@@ -78,6 +78,11 @@ public class InputReader : ScriptableObject,IGameActions
     public void OnInventory(InputAction.CallbackContext context)
     {
         if(context.performed) OnInventoryEvent?.Invoke();
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if(context.performed) OnInteractEvent?.Invoke();
     }
 }
 }

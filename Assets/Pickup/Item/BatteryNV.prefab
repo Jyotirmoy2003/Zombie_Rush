@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 4647456109167622041}
   - component: {fileID: 661892356220720712}
   - component: {fileID: 1382519040769590264}
+  - component: {fileID: 7153536753071671421}
+  - component: {fileID: 5845373958417014847}
+  - component: {fileID: 1491520021320471724}
   m_Layer: 7
   m_Name: BatteryNV
   m_TagString: item
@@ -127,3 +130,53 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21181946, y: 0.4118677, z: 0.21726689}
   m_Center: {x: 0.000000029802326, y: 0.012331026, z: -0.000000037252907}
+--- !u!114 &7153536753071671421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348953810603841657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &5845373958417014847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348953810603841657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfc4d53d81096948b34ce07860f324e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camRef: {fileID: 0}
+  targetTramform: {fileID: 3610459591508386624}
+  isSequencialFlow: 1
+  startIndex: 0
+  feedbackList:
+  - {fileID: 11400000, guid: a543286ac94eb4e468026731758679ee, type: 2}
+--- !u!114 &1491520021320471724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348953810603841657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4bfaac2f741df4bad89e5c07a4dcae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chooseItem: 9
+  gazeEvent: {fileID: 11400000, guid: c8cf46fa762615a4296d4976b4f2fc36, type: 2}

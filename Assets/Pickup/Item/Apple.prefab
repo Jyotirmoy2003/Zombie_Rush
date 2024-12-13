@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 1247824507296262313}
   - component: {fileID: 7193040492832199439}
   - component: {fileID: 6674956102746673244}
+  - component: {fileID: -6360408598979540899}
+  - component: {fileID: 6760583845428253863}
+  - component: {fileID: 6787001725707519444}
   m_Layer: 7
   m_Name: Apple
   m_TagString: item
@@ -127,3 +130,53 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.2868103
   m_Center: {x: -0.0000024735925, y: 0.06987904, z: -0.005555972}
+--- !u!114 &-6360408598979540899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171213921219280238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &6760583845428253863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171213921219280238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfc4d53d81096948b34ce07860f324e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camRef: {fileID: 0}
+  targetTramform: {fileID: 6434544629437330255}
+  isSequencialFlow: 1
+  startIndex: 0
+  feedbackList:
+  - {fileID: 11400000, guid: a543286ac94eb4e468026731758679ee, type: 2}
+--- !u!114 &6787001725707519444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171213921219280238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4bfaac2f741df4bad89e5c07a4dcae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chooseItem: 7
+  gazeEvent: {fileID: 11400000, guid: c8cf46fa762615a4296d4976b4f2fc36, type: 2}

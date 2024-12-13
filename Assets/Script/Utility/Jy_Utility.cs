@@ -35,6 +35,22 @@ public enum E_TypeOf_Weapon{
     SprayCan,
     Bottle
 }
+
+public enum E_TypeOf_Item{
+        flashlight,
+        nightvision,
+        lighter,
+        rags,
+        healthPack,
+        pills,
+        waterBottle,
+        apple,
+        flashlightBattery,
+        nightvisionBattery,
+        houseKey,
+        cabinKey,
+        jerryCan
+}
 public delegate void NoArgumentFun();
 }
 
@@ -48,9 +64,10 @@ public struct InventoryItem
 }
 
 [System.Serializable]
-public struct S_WepomInfo
+public struct S_Info
 {
     public Sprite sprite;
     public string title;
     public string description;
 }
+

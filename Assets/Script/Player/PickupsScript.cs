@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game_Input;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,16 +8,13 @@ using UnityEngine.UI;
 public class PickupsScript : MonoBehaviour
 {
     [Header("Elements")]
+    [SerializeField] InputReader gameInput;
     [SerializeField] float picupDisplayDistacne=8f;
     [SerializeField] LayerMask excludeLayers;
-    [SerializeField] S_WepomInfo[] weaponInfoList;
+    [SerializeField] GameEvent interactEvent;
 
 
-    [Header("UI Element ref")]
-    [SerializeField] GameObject pickupPanel;
-    [SerializeField] Image mainIcon_IMG;
-    [SerializeField] Text main_Title_Text,pickup_Desc_Text;
-
+   
     private RaycastHit hit;
     private int ObjId=0;
     private IInteractable currentInteractingObj;
@@ -24,8 +22,21 @@ public class PickupsScript : MonoBehaviour
 
     void Start()
     {
-        pickupPanel.SetActive(false);
+        
     }
+    #region INPUT Bind
+    private void OnEnable()
+    {
+        gameInput.OnInteractEvent+=OnInteract;
+    }
+    
+    private void OnDisable()
+    {
+        gameInput.OnInteractEvent-=OnInteract;
+    }
+
+
+    #endregion
 
     // Update is called once per frame
     void Update()
@@ -44,10 +55,7 @@ public class PickupsScript : MonoBehaviour
             UnHoverLastSelectedObj();
         }
 
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            OnInteract();
-        }
+       
     }
 
     void UnHoverLastSelectedObj()
@@ -55,8 +63,7 @@ public class PickupsScript : MonoBehaviour
         if(currentInteractingObj!=null)
         {
             currentInteractingObj.UnHover();
-            currentInteractingObj=null;
-            pickupPanel.SetActive(false);   
+            currentInteractingObj=null;  
         }
     }
 
@@ -68,11 +75,7 @@ public class PickupsScript : MonoBehaviour
         currentInteractingObj=newObj;
         ObjId=currentInteractingObj.Hover();
 
-        //Show UI panel data
-        pickup_Desc_Text.text=weaponInfoList[ObjId].description;
-        main_Title_Text.text=weaponInfoList[ObjId].title;
-        mainIcon_IMG.sprite=weaponInfoList[ObjId].sprite;
-        pickupPanel.SetActive(true);
+        
     }
 
     void OnInteract()
@@ -80,7 +83,9 @@ public class PickupsScript : MonoBehaviour
         if(currentInteractingObj==null) return;
 
         currentInteractingObj.Interact();
-        SaveScript.weponAmts[ObjId]++;
+        //SaveScript.weponAmts[ObjId]++;
+        //Event raise
+        interactEvent.Raise(this,currentInteractingObj);
 
         AudioManager.instance.PlaySound("Pickup");
     }
