@@ -9,7 +9,7 @@ public class PickupsScript : MonoBehaviour
 {
     [Header("Elements")]
     [SerializeField] InputReader gameInput;
-    [SerializeField] float picupDisplayDistacne=8f;
+    [SerializeField] float picupDisplayDistacne=8f,sphareRedius=0.5f;   
     [SerializeField] LayerMask excludeLayers;
     [SerializeField] GameEvent interactEvent;
 
@@ -41,7 +41,7 @@ public class PickupsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Physics.SphereCast(transform.position,0.5f,transform.forward,out hit,picupDisplayDistacne,~excludeLayers))
+        if(Physics.SphereCast(transform.position,sphareRedius,transform.forward,out hit,picupDisplayDistacne,~excludeLayers))
         {
 
             if(hit.collider.TryGetComponent<IInteractable>(out currentInteractingObj ))

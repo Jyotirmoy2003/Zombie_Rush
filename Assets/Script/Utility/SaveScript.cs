@@ -14,13 +14,13 @@ public class SaveScript : MonoBehaviour
 
    void Start()
    {
-    weaponPickedup[0]=true;
+      weaponPickedup[0]=true;
+      weponAmts[0]=1;
 
-
-    ItemPickedUp[0]=true;
-    ItemPickedUp[1]=true;
-    ItemPickedUp[2]=true;
-    ItemPickedUp[3]=true;
+      ItemPickedUp[0]=true;
+      ItemPickedUp[1]=true;
+      itemAmts[0]=1;
+      itemAmts[1]=1;
    }
 
    

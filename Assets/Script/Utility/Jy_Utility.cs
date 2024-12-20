@@ -51,6 +51,12 @@ public enum E_TypeOf_Item{
         cabinKey,
         jerryCan
 }
+
+public enum E_Typeof_Ammo{
+    gunAmmo,
+    shotgunAmmo
+}
+
 public delegate void NoArgumentFun();
 }
 

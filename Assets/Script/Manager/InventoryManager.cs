@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour
 
     [Header("Ref Weapon")]
     [SerializeField] Image bigIcon;
-    [SerializeField] Text title,description;
+    [SerializeField] Text title,description,weaponAmtText;
     [SerializeField] WeaponManager weaponManager;
     [SerializeField] InventoryItem[] inventoryWeapons;
     [SerializeField] GameObject useButton,combineButton,combinePanel,combineUseButton;
@@ -21,8 +21,9 @@ public class InventoryManager : MonoBehaviour
 
     [Header("Ref Item")]
     [SerializeField] Image bigIcon_item;
-    [SerializeField] Text title_item,description_item;
+    [SerializeField] Text title_item,description_item,itemAmtText;
     [SerializeField] InventoryItem[] inventoryItems;
+    
 
     private int currentSelectedWeapon=0,currentSelectedItem=0;
 
@@ -106,9 +107,12 @@ public class InventoryManager : MonoBehaviour
 
     public void ChoosWeapon(int weponIndex)
     {
+        //UI
         bigIcon.sprite=inventoryWeapons[weponIndex].sprite;
         title.text=inventoryWeapons[weponIndex].Title;
         description.text=inventoryWeapons[weponIndex].description;
+        weaponAmtText.text="Amts: "+SaveScript.itemAmts[weponIndex].ToString();
+        //LOGIC
         AudioManager.instance.PlaySound("Click");
         currentSelectedWeapon=weponIndex;
         combinePanel.SetActive(false);
@@ -116,9 +120,12 @@ public class InventoryManager : MonoBehaviour
     }
     public void ChoosItem(int itemIndex)
     {
+        //UI
         bigIcon_item.sprite=inventoryItems[itemIndex].sprite;
         title_item.text=inventoryItems[itemIndex].Title;
         description_item.text=inventoryItems[itemIndex].description;
+        itemAmtText.text="Amts: "+SaveScript.itemAmts[itemIndex].ToString();
+        //LOGIC
         AudioManager.instance.PlaySound("Click");
         currentSelectedItem=itemIndex;
         //set up use button

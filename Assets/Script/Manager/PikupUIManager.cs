@@ -13,6 +13,7 @@ public class PikupUIManager : MonoBehaviour
     [Header("Settings")]
     [SerializeField] S_Info[] weaponInfoList;
     [SerializeField] S_Info[] itemInfoList;
+    [SerializeField] S_Info[] ammoList;
 
 
     void Start()
@@ -29,31 +30,57 @@ public class PikupUIManager : MonoBehaviour
         if(sender is WeaponType)
         {
             WeaponType tempHoldingWeponType=(WeaponType)sender;
-            ShowHidePickupUI(true,(bool)data,tempHoldingWeponType.GetID());
+            ShowHidePickupUIWeapon((bool)data,tempHoldingWeponType.GetID());
         }else if(sender is ItemType)
         {
             ItemType tempHoldingItemType=(ItemType)sender;
-            ShowHidePickupUI(false,(bool)data,tempHoldingItemType.GetID());
+            ShowHidePickupUIItem((bool)data,tempHoldingItemType.GetID());
+        }else if(sender is AmmoType)
+        {
+            AmmoType tempHoldingAmmotype=(AmmoType)sender;
+            ShowHidePickupUIAmmo((bool)data,tempHoldingAmmotype.GetID());
         }
     }
 
-    void ShowHidePickupUI(bool isWeapon,bool show,int id)
+    void ShowHidePickupUIWeapon(bool show,int id)
     {
         if(show)
         {
             //Show UI panel data
-            if(isWeapon)
-            {
-                pickup_Desc_Text.text=weaponInfoList[id].description;
-                main_Title_Text.text=weaponInfoList[id].title;
-                mainIcon_IMG.sprite=weaponInfoList[id].sprite;
-                pickupPanel.SetActive(true);
-            }else{
-                pickup_Desc_Text.text=itemInfoList[id].description;
-                main_Title_Text.text=itemInfoList[id].title;
-                mainIcon_IMG.sprite=itemInfoList[id].sprite;
-                pickupPanel.SetActive(true);
-            }
+            pickup_Desc_Text.text=weaponInfoList[id].description;
+            main_Title_Text.text=weaponInfoList[id].title;
+            mainIcon_IMG.sprite=weaponInfoList[id].sprite;
+            pickupPanel.SetActive(true);
+            
+        }else{
+            pickupPanel.SetActive(false);
+        }
+    }
+    void ShowHidePickupUIItem(bool show,int id)
+    {
+        if(show)
+        {
+            //Show UI panel data
+            pickup_Desc_Text.text=itemInfoList[id].description;
+            main_Title_Text.text=itemInfoList[id].title;
+            mainIcon_IMG.sprite=itemInfoList[id].sprite;
+            pickupPanel.SetActive(true);
+         
+        }else{
+            pickupPanel.SetActive(false);
+        }
+    }
+
+    void ShowHidePickupUIAmmo(bool show,int id)
+    {
+        if(show)
+        {
+            //Show UI panel data
+            pickup_Desc_Text.text=ammoList[id].description;
+            main_Title_Text.text=ammoList[id].title;
+            mainIcon_IMG.sprite=ammoList[id].sprite;
+            pickupPanel.SetActive(true);
+         
         }else{
             pickupPanel.SetActive(false);
         }

@@ -18,7 +18,7 @@ public class ItemType : MonoBehaviour,IInteractable
     {
         SetupOutline();
         feedBackManager=GetComponent<FeedBackManager>();
-        playerTranform=FindObjectOfType<FirstPersonController>().transform;
+        playerTranform=GameAssets.Instance.playerTransform;
     }
 
 

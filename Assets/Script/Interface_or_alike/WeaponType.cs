@@ -16,7 +16,7 @@ public class WeaponType : MonoBehaviour,IInteractable
     void Start(){
         SetupOutline();
         feedBackManager=GetComponent<FeedBackManager>();
-        playerTranform=FindObjectOfType<FirstPersonController>().transform;
+        playerTranform=GameAssets.Instance.playerTransform;
     }
 
 
