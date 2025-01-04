@@ -34,6 +34,7 @@ public class FeedBackManager : MonoBehaviour
     {
         if(camRef) compList.Add(camRef);
         if(targetTramform) compList.Add(targetTramform);
+        else compList.Add(transform);
         compList.Add(this);
     }
 
@@ -77,8 +78,9 @@ public class FeedBackManager : MonoBehaviour
         if(playingFeedbackIndexForSeq!=startIndex)
             feedbackList[playingFeedbackIndexForSeq].feedbackFinishedExe-=InitiateFeedbackseq;
 
+
         //when its the last feedback
-        if(playingFeedbackIndexForSeq>feedbackList.Count)
+        if(feedbackList[playingFeedbackIndexForSeq]==null)
         {
             playingFeedbackIndexForSeq=-1;
             isAlreadyPlayingFeedback=false;

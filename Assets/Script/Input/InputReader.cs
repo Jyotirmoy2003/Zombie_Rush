@@ -11,7 +11,7 @@ namespace Game_Input
 {
     
 
-[CreateAssetMenu(fileName ="Ne Input Reader",menuName ="Input/Input Reader")]
+[CreateAssetMenu(fileName ="New Input Reader",menuName ="GAME/Input/Input Reader")]
 public class InputReader : ScriptableObject,IGameActions
 {
     public event Action<bool> OnJumpEvent,OnRunEvent;

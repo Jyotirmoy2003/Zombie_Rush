@@ -57,6 +57,12 @@ public enum E_Typeof_Ammo{
     shotgunAmmo
 }
 
+public enum E_Typeof_Door{
+    Cabinet,
+    House,
+    Cabin
+}
+
 public delegate void NoArgumentFun();
 }
 
