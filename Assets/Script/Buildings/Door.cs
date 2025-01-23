@@ -3,17 +3,26 @@ using System.Collections.Generic;
 using Jy_Mono_Util;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Outline))]
+[RequireComponent(typeof(FeedBackManager))]
 public class Door : MonoBehaviour,IInteractable
 {
     //any building id 50-60
     [SerializeField] int ID=51;
     [SerializeField] GameEvent gazeEvent;
+    [SerializeField] string headerText,infoText;
+    [SerializeField] List<AudioClip> audioClips =new List<AudioClip>();
     public E_Typeof_Door chooseDoorType;
    public bool isOpen=false;
    public bool isLocked=false;
-   private bool isPlayingFeedback=false;
+   [SerializeField]private bool isPlayingFeedback=false;
    [SerializeField] FeedBackManager doorOpenFeedback,doorCloseFeedback;
    private Outline outline;
+   private AudioSource doorAudio;
+
+    public string Header { get ; set ; }
+    public string Info { get ; set ; }
 
     public int GetID()
     {
@@ -29,15 +38,19 @@ public class Door : MonoBehaviour,IInteractable
 
     public void Interact()
     {
-        if(isPlayingFeedback) return;
+        if(isPlayingFeedback || isLocked) return;
         if(isOpen)
         {
             doorCloseFeedback.PlayFeedback();
             doorCloseFeedback.CompletePlayingFeedback+=FullyClosed;
-        }else{
+            isPlayingFeedback = true;
+        }else {
             doorOpenFeedback.PlayFeedback();
             doorOpenFeedback.CompletePlayingFeedback+=FullyOpened;
+            isPlayingFeedback = true;
         }
+
+        doorAudio.Play();
     }
 
     public int UnHover()
@@ -51,6 +64,27 @@ public class Door : MonoBehaviour,IInteractable
     {
         if(!outline) outline=GetComponent<Outline>();
         outline.enabled=false;
+        Header=headerText;
+        Info=infoText;
+        if(isLocked)
+        {
+            Info="Locked! Need "+chooseDoorType+" key";
+        }
+        
+        doorAudio = GetComponent<AudioSource>();
+        switch(chooseDoorType)
+        {
+            case E_Typeof_Door.Cabinet:
+                doorAudio.clip = audioClips[0];
+                break;
+            case E_Typeof_Door.House:
+                doorAudio.clip = audioClips[1];
+                break;
+            case E_Typeof_Door.Cabin:
+                doorAudio.clip = audioClips[2];
+                break;
+        }
+
     }
 
     void FullyOpened()

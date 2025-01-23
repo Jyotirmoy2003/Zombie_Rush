@@ -20,6 +20,7 @@ public class FB_Transform : FeedbackBase
     [HideInInspector]
     public  Vector3 evalutedVector;
     protected FeedBackManager currentFeedbackManager;
+    private bool isAlreadyOverrideDone=false;
 
     public FB_Transform(FB_Transform fb_TranformBase) : base(fb_TranformBase)
     {
@@ -61,18 +62,7 @@ public class FB_Transform : FeedbackBase
         sz.Append(DOVirtual.Float(0, 1f, duration, v =>PerformEffectZ(v) )).onComplete=EndExe;
     }
 
-    // public virtual void PerformEffectX(float val)
-    // {
-        
-    // }
-    // public virtual void PerformEffectY(float val)
-    // {
-
-    // }
-    // public virtual void PerformEffectZ(float val)
-    // {
-
-    // }
+  
 
     void EndExe()=>feedbackFinishedExe?.Invoke();
 
@@ -134,7 +124,15 @@ public class FB_Transform : FeedbackBase
         else EffectGlobal();
     }
 
-
+    private void CheckOverride()
+    {
+        if(!isAlreadyOverrideDone && currentFeedbackManager!=null && currentFeedbackManager.overrideRemaps)
+        {
+            reampCurveOne=currentFeedbackManager.curveOneRemap;
+            reampCurveZero*=currentFeedbackManager.curveZeroRemap;
+            isAlreadyOverrideDone=true;
+        }
+    }
 
 
 
@@ -153,6 +151,7 @@ public class FB_Transform : FeedbackBase
     public override void OnFeedbackActiavte()
     {
         base.OnFeedbackActiavte();
+        
         feedbackFinishedExe+=OnFeedbackDeactivate;
 
     }
@@ -180,6 +179,8 @@ public class FB_Transform : FeedbackBase
         foreach(Component item in comp)
             if(item is FeedBackManager)
                 currentFeedbackManager=(FeedBackManager)item;
+
+        CheckOverride();
             
     }
     #endregion

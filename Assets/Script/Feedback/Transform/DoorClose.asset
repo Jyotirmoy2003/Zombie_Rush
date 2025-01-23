@@ -18,7 +18,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  duration: 5
+  duration: 0.5
   effectX: 0
   effectY: 1
   effectZ: 0

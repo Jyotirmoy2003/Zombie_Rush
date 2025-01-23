@@ -41,7 +41,7 @@ public class PickupsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Physics.SphereCast(transform.position,sphareRedius,transform.forward,out hit,picupDisplayDistacne,~excludeLayers))
+        if(Physics.Raycast(transform.position,transform.forward,out hit,picupDisplayDistacne,~excludeLayers))
         {
 
             if(hit.collider.TryGetComponent<IInteractable>(out currentInteractingObj ))
@@ -87,6 +87,6 @@ public class PickupsScript : MonoBehaviour
         //Event raise
         interactEvent.Raise(this,currentInteractingObj);
 
-        AudioManager.instance.PlaySound("Pickup");
+        
     }
 }

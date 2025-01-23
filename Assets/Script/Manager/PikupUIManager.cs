@@ -39,6 +39,10 @@ public class PikupUIManager : MonoBehaviour
         {
             AmmoType tempHoldingAmmotype=(AmmoType)sender;
             ShowHidePickupUIAmmo((bool)data,tempHoldingAmmotype.GetID());
+        }else if(sender is IInteractable)
+        {
+            IInteractable interactable= sender.GetComponent<IInteractable>();
+            ShowUIText(true,interactable.Header,interactable.Info);
         }
     }
 
@@ -64,6 +68,22 @@ public class PikupUIManager : MonoBehaviour
             pickup_Desc_Text.text=itemInfoList[id].description;
             main_Title_Text.text=itemInfoList[id].title;
             mainIcon_IMG.sprite=itemInfoList[id].sprite;
+            mainIcon_IMG.enabled=true;
+            pickupPanel.SetActive(true);
+         
+        }else{
+            pickupPanel.SetActive(false);
+        }
+    }
+
+    void ShowUIText(bool show=false,string header="",string info="")
+    {
+        if(show)
+        {
+            //Show UI panel data
+            pickup_Desc_Text.text=info;
+            main_Title_Text.text=header;
+            mainIcon_IMG.enabled=false;
             pickupPanel.SetActive(true);
          
         }else{
@@ -79,6 +99,7 @@ public class PikupUIManager : MonoBehaviour
             pickup_Desc_Text.text=ammoList[id].description;
             main_Title_Text.text=ammoList[id].title;
             mainIcon_IMG.sprite=ammoList[id].sprite;
+            mainIcon_IMG.enabled=true;
             pickupPanel.SetActive(true);
          
         }else{

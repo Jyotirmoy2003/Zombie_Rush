@@ -13,6 +13,10 @@ public class WeaponType : MonoBehaviour,IInteractable
     private Outline outline;
     private Transform playerTranform;
     private FeedBackManager feedBackManager;
+
+    public string Header { get ; set ; }
+    public string Info { get ; set ; }
+
     void Start(){
         SetupOutline();
         feedBackManager=GetComponent<FeedBackManager>();
@@ -33,6 +37,7 @@ public class WeaponType : MonoBehaviour,IInteractable
     {
         feedBackManager.PlayFeedback();
         MoveToPlayer(playerTranform.position);
+        AudioManager.instance.PlaySound("Pickup");
         Destroy(this.gameObject,0.5f);
     }
 
