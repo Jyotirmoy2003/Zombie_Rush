@@ -14,7 +14,7 @@ namespace Game_Input
 [CreateAssetMenu(fileName ="New Input Reader",menuName ="GAME/Input/Input Reader")]
 public class InputReader : ScriptableObject,IGameActions
 {
-    public event Action<bool> OnJumpEvent,OnRunEvent;
+    public event Action<bool> OnJumpEvent,OnRunEvent,onFirePress;
     public event Action OnFlashlightEvent,OnNightVisionEvent,OnInventoryEvent,OnInteractEvent;
     public event Action<Vector2> OnMoveEvent; 
     public event Action<Double> OnZoomEvent;
@@ -84,5 +84,15 @@ public class InputReader : ScriptableObject,IGameActions
     {
         if(context.performed) OnInteractEvent?.Invoke();
     }
-}
+
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        if(context.performed) onFirePress?.Invoke(true);
+        else if(context.canceled) onFirePress?.Invoke(false);
+    }
+    
+    
+    
+    
+    }
 }

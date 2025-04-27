@@ -64,12 +64,12 @@ public class FeedBackManager : MonoBehaviour
             playingFeedbackIndexForSeq=startIndex;
             InitiateFeedbackseq();
         }else
-            InitiateFeedback();
+            InitiateFeedbackParallel();
     }
 
 
 
-    void InitiateFeedback()
+    void InitiateFeedbackParallel()
     {
         
         for(int i=startIndex;i<feedbackList.Count;i++)

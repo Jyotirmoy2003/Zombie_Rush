@@ -12,7 +12,7 @@ public class Door : MonoBehaviour,IInteractable
     [SerializeField] int ID=51;
     [SerializeField] GameEvent gazeEvent;
     [SerializeField] string headerText,infoText;
-    [SerializeField] List<AudioClip> audioClips =new List<AudioClip>();
+    [SerializeField] AudioClip audioClip;
     public E_Typeof_Door chooseDoorType;
    public bool isOpen=false;
    public bool isLocked=false;
@@ -72,18 +72,7 @@ public class Door : MonoBehaviour,IInteractable
         }
         
         doorAudio = GetComponent<AudioSource>();
-        switch(chooseDoorType)
-        {
-            case E_Typeof_Door.Cabinet:
-                doorAudio.clip = audioClips[0];
-                break;
-            case E_Typeof_Door.House:
-                doorAudio.clip = audioClips[1];
-                break;
-            case E_Typeof_Door.Cabin:
-                doorAudio.clip = audioClips[2];
-                break;
-        }
+        doorAudio.clip=audioClip;
 
     }
 

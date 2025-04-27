@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Jy_Mono_Util;
+using Game_Input;
 
 public class WeaponManager : MonoBehaviour
 {
+    [SerializeField] InputReader gameInputReader;
     [SerializeField] E_weaponSelect chosenWeapon;
     [SerializeField] GameObject[] weapons;
     [SerializeField] GameObject Lighter;
@@ -24,6 +26,31 @@ public class WeaponManager : MonoBehaviour
         if(!animator) animator=GetComponent<Animator>();
 
         ChangeWeapon();
+
+        SubscribeToInput(true);
+    }
+
+    
+    private void OnDestroy()
+    {
+        SubscribeToInput(false);
+    }
+
+    void SubscribeToInput(bool val)
+    {
+        if(val)
+        {
+            gameInputReader.onFirePress+=Fire;
+        }else
+        {
+            gameInputReader.onFirePress-=Fire;
+        }
+    }
+
+    void Fire(bool press)
+    {
+        
+        if(press)AttackWithWeapon();
     }
 
     public void ChangeWeapon()
@@ -96,15 +123,39 @@ public class WeaponManager : MonoBehaviour
             ChangeWeapon();
         }
 
-        if(Input.GetMouseButtonDown(0))
+        // if(Input.GetMouseButtonDown(0))
+        // {
+        //     AttackWithWeapon();
+        // }
+
+    }
+
+    void AttackWithWeapon()
+    {
+
+        if(SaveScript.currentAmmo[SaveScript.weaponID]>0)
         {
+
             animator.SetTrigger("Attack");
-            
+
+            if(SaveScript.weaponID == 4 || SaveScript.weaponID == 5 )
+            {
+                SaveScript.currentAmmo[SaveScript.weaponID] --;
+            }
+            //Audio   
             if(!weaponAudios[SaveScript.weaponID]) return; //if no audio is assigned just skip
             audioSource.clip=weaponAudios[SaveScript.weaponID];
             audioSource.Play();
-        }
 
+        }else{
+            if(SaveScript.weaponID == 4 || SaveScript.weaponID == 5 )
+            {
+                audioSource.clip = GameAssets.Instance.weponEmptyClick;
+                audioSource.Play();
+            }
+        }
     }
+
+    
 
 }

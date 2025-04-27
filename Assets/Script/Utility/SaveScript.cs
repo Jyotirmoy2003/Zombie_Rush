@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SaveScript : MonoBehaviour
@@ -11,6 +12,7 @@ public class SaveScript : MonoBehaviour
    public static bool[] ItemPickedUp=new bool[13];
    public static int[] weponAmts=new int[8];
    public static int[] itemAmts=new int[8];
+   public static int[] currentAmmo = new int[9];
 
    void Start()
    {
@@ -21,6 +23,18 @@ public class SaveScript : MonoBehaviour
       ItemPickedUp[1]=true;
       itemAmts[0]=1;
       itemAmts[1]=1;
+
+      InitValue();
+   }
+
+   void InitValue()
+   {
+      for(int i=0;i<currentAmmo.Length;i++)
+      {
+         currentAmmo[i] = 2;
+      }
+
+      currentAmmo[4] = 12;
    }
 
    

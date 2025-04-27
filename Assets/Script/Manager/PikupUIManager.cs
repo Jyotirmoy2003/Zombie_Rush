@@ -42,7 +42,7 @@ public class PikupUIManager : MonoBehaviour
         }else if(sender is IInteractable)
         {
             IInteractable interactable= sender.GetComponent<IInteractable>();
-            ShowUIText(true,interactable.Header,interactable.Info);
+            ShowUIText((bool)data,interactable.Header,interactable.Info);
         }
     }
 
