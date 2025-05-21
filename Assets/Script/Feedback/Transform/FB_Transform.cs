@@ -126,12 +126,13 @@ public class FB_Transform : FeedbackBase
 
     private void CheckOverride()
     {
-        if(!isAlreadyOverrideDone && currentFeedbackManager!=null && currentFeedbackManager.overrideRemaps)
+        if (!isAlreadyOverrideDone && currentFeedbackManager != null && currentFeedbackManager.overrideRemaps)
         {
-            reampCurveOne=currentFeedbackManager.curveOneRemap;
-            reampCurveZero*=currentFeedbackManager.curveZeroRemap;
-            isAlreadyOverrideDone=true;
+            reampCurveOne = currentFeedbackManager.curveOneRemap;
+            reampCurveZero = currentFeedbackManager.curveZeroRemap;
+            isAlreadyOverrideDone = true;
         }
+        
     }
 
 

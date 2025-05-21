@@ -10,7 +10,6 @@ public class Door : MonoBehaviour,IInteractable
 {
     //any building id 50-60
     [SerializeField] int ID=51;
-    [SerializeField] GameEvent gazeEvent;
     [SerializeField] string headerText,infoText;
     [SerializeField] AudioClip audioClip;
     public E_Typeof_Door chooseDoorType;
@@ -32,7 +31,7 @@ public class Door : MonoBehaviour,IInteractable
     public int Hover()
     {
         if(outline)outline.enabled=true;
-        gazeEvent.Raise(this,true);
+        GameAssets.Instance.gazeEvent.Raise(this,true);
         return ID;
     }
 
@@ -56,7 +55,7 @@ public class Door : MonoBehaviour,IInteractable
     public int UnHover()
     {
         if(outline)outline.enabled=false;
-        gazeEvent.Raise(this,false);
+        GameAssets.Instance.gazeEvent.Raise(this,false);
         return ID;
     }
 
@@ -68,7 +67,7 @@ public class Door : MonoBehaviour,IInteractable
         Info=infoText;
         if(isLocked)
         {
-            Info="Locked! Need "+chooseDoorType+" key";
+            Info="Locked! You Need to use "+chooseDoorType+" key";
         }
         
         doorAudio = GetComponent<AudioSource>();

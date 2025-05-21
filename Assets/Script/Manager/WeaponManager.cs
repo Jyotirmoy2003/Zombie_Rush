@@ -15,6 +15,11 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] AudioClip[] weaponAudios;
     private AudioSource audioSource;
 
+    [Space]
+    [Header("MuzzleFlash")]
+    [SerializeField] ParticleSystem muzzleFlashPistol;
+    [SerializeField] ParticleSystem muzzleFlashShotgun;
+
     [Header("Arms")]
     [SerializeField] Transform armGameObject;
     void Start()
@@ -55,18 +60,20 @@ public class WeaponManager : MonoBehaviour
 
     public void ChangeWeapon()
     {
-        foreach(GameObject item in weapons)
+        foreach (GameObject item in weapons)
         {
             item.SetActive(false);
         }
 
         weapons[SaveScript.weaponID].SetActive(true);
-        animator.SetBool("WeaponChange",true);
-        animator.SetInteger("WeaponID",SaveScript.weaponID);
-        Invoke(nameof(ResetAnimationBool),0.3f);
-        chosenWeapon=(E_weaponSelect)SaveScript.weaponID;
+        animator.SetBool("WeaponChange", true);
+        animator.SetInteger("WeaponID", SaveScript.weaponID);
+        Invoke(nameof(ResetAnimationBool), 0.3f);
+        chosenWeapon = (E_weaponSelect)SaveScript.weaponID;
 
         MoveFPSArm();
+        //Fire event when wepon changed
+        GameAssets.Instance.weponChangedEvent.Raise(this, SaveScript.weaponID);
     }
 
     void ResetAnimationBool()
@@ -138,9 +145,13 @@ public class WeaponManager : MonoBehaviour
 
             animator.SetTrigger("Attack");
 
-            if(SaveScript.weaponID == 4 || SaveScript.weaponID == 5 )
+            //decrease ammo for pistol and shotgun only
+            if (SaveScript.weaponID == 4 || SaveScript.weaponID == 5)
             {
-                SaveScript.currentAmmo[SaveScript.weaponID] --;
+                SaveScript.currentAmmo[SaveScript.weaponID]--;
+                muzzleFlashPistol.Play();
+                muzzleFlashShotgun.Play();
+                GameAssets.Instance.weaponFiredEvent.Raise(this, true);
             }
             //Audio   
             if(!weaponAudios[SaveScript.weaponID]) return; //if no audio is assigned just skip

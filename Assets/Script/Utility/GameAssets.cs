@@ -10,4 +10,10 @@ public class GameAssets : MonoSingleton<GameAssets>
 
     [Header("Aduio")]
     public AudioClip weponEmptyClick;
+
+    [Space]
+    [Header("Events")]
+    public GameEvent gazeEvent;
+    public GameEvent weaponFiredEvent;
+    public GameEvent weponChangedEvent;
 }
