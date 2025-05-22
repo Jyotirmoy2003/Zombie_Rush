@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WeaponUIManager : MonoBehaviour
+public class WeaponUIManager : MonoSingleton<WeaponUIManager>
 {
     [Header("Panels")]
     [SerializeField] GameObject pistolPanel;
@@ -26,7 +26,7 @@ public class WeaponUIManager : MonoBehaviour
 
 
 
-    public void ListnToOnWeponFired(Component sender, object data)
+    public void ListnToOnUIUpdate(Component sender, object data)
     {
         UpdateWeponUIData();
     }
@@ -46,11 +46,18 @@ public class WeaponUIManager : MonoBehaviour
         {
             //pistol
             pistolCurrentAmmo.text = SaveScript.currentAmmo[SaveScript.weaponID].ToString();
+            pistolTotalAmmo.text = "/ " + SaveScript.ammoAmts[0].ToString();
         }
         else
         {
             //Shotgun
             shotGunCurrentAmmo.text = SaveScript.currentAmmo[SaveScript.weaponID].ToString();
+            shotGunTotalAmmo.text = "/ " + SaveScript.ammoAmts[1].ToString();
         }
+    }
+
+    public void SetSprayAmount(float value)
+    {
+        
     }
 }

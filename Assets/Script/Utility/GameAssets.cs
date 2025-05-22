@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game_Input;
 using UnityEngine;
 
 public class GameAssets : MonoSingleton<GameAssets>
@@ -14,6 +15,10 @@ public class GameAssets : MonoSingleton<GameAssets>
     [Space]
     [Header("Events")]
     public GameEvent gazeEvent;
-    public GameEvent weaponFiredEvent;
+    public GameEvent weaponUIUpdateEvent;
     public GameEvent weponChangedEvent;
+
+    [Space]
+    [Header("Input")]
+    public InputReader gameInput;
 }

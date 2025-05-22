@@ -151,7 +151,7 @@ public class WeaponManager : MonoBehaviour
                 SaveScript.currentAmmo[SaveScript.weaponID]--;
                 muzzleFlashPistol.Play();
                 muzzleFlashShotgun.Play();
-                GameAssets.Instance.weaponFiredEvent.Raise(this, true);
+                GameAssets.Instance.weaponUIUpdateEvent.Raise(this, true);
             }
             //Audio   
             if(!weaponAudios[SaveScript.weaponID]) return; //if no audio is assigned just skip
